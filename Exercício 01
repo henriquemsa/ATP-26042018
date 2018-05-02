@@ -1,0 +1,59 @@
+/*
+ * Faça um programa que leia os elementos de um array de tamanho 'n' e mostre o maior e o menor elementos do array.
+ */
+
+using System;
+
+namespace Exercicio_01
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaração de variáveis
+            int n, maior = int.MinValue, menor = int.MaxValue, posicaoMaior = 0, posicaoMenor = 0;
+
+            // Recebendo o tamanho do vetor do usuário
+            Console.Clear(); // Limpa tela
+            Console.WriteLine(); // Pula linha
+            Console.Write(" Entre com o número de elementos a serem contabilizados: ");
+            n = int.Parse(Console.ReadLine());
+
+            // Declarando o vetor de 'n' posições
+            int[] vet = new int[n];
+
+            // Preenchendo o vetor 'vet' e verificando os maiores e menores valores
+            for (int i = 0; i < n; i++)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.Write(" Entre com o valor a ser inserido na {0}ª posição do vetor: ", (i + 1));
+                vet[i] = int.Parse(Console.ReadLine());
+
+                // Compara se o valor inserido é maior que o valor de 'maior'
+                if (vet[i] > maior)
+                {
+                    maior = vet[i];
+                    posicaoMaior = i + 1;
+                }
+
+                // Compara se o valor inserido é menor que o valor de 'menor'
+                if (vet[i] < menor)
+                {
+                    menor = vet[i];
+                    posicaoMenor = i + 1;
+                }
+            }
+
+            // Imprimindo resultado
+            Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine(" O maior valor do vetor de {0} posições é {1}, na posição {2}.", n, maior, posicaoMaior);
+            Console.WriteLine(" O menor valor do vetor de {0} posições é {1}, na posição {2}.", n, menor, posicaoMenor);
+            Console.WriteLine();
+            Console.Write(" Pressione qualquer tecla para sair...");
+            Console.ReadKey();
+
+        }
+    }
+}
