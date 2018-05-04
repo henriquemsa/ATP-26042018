@@ -14,7 +14,7 @@ namespace Exercicio3
             // Declaração de variáveis
             int aux, trocas; // 'aux' para realizar trocas de posições dos vetores e 'trocas' para guardar o número de trocas efetuadas
 
-            // Laço para realizar 
+            // Laço para rodar vários 'for' até que o vetor esteja ordenado
             do
             {
                 // Reinicia o número de trocas antes de entrar no 'for'
