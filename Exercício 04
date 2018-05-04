@@ -1,0 +1,56 @@
+/*
+ * Faça um programa para ler um número inteiro N e N elementos de um array. Em seguida, encontre a posição do menor elemento.
+ */
+
+using System;
+
+namespace Exercicio4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaração de variáveis
+            int n, menor; // 'n' para o número de posições do vetor e 'menor' para guardar o menor valor entre os elementos desse vetor
+
+            // Recebendo o tamanho do vetor do usuário
+            Console.Clear();
+            Console.WriteLine();
+            Console.Write(" Entre com o tamanho do vetor a ser criado: ");
+            n = int.Parse(Console.ReadLine());
+
+            // Criando o vetor 'vet' de 'n' posições
+            int[] vet = new int[n];
+
+            // Preenchendo o vetor 
+            for (int i = 0; i < vet.Length; i++)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.Write(" Entre com o valor da {0}ª posição do vetor: ", (i + 1));
+                vet[i] = int.Parse(Console.ReadLine());
+            }
+
+            // Atribuindo valor da primeira posição do vetor à variável 'menor'
+            menor = vet[0];
+
+            // Encontrando o menor elemento do vetor 'vet'
+            for (int i = 0; i < vet.Length; i++)
+            {
+                if (vet[i] < menor)
+                {
+                    menor = vet[i];
+                    n = i; // Guardando a posição do menor valor na variável 'n'
+                }
+            }
+
+            // Imprimindo resultado
+            Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine(" O menor valor do array é {0} e encontra-se na posição {1}.", menor, (n + 1));
+            Console.WriteLine();
+            Console.WriteLine(" Pressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+    }
+}
