@@ -1,0 +1,78 @@
+/*
+ * Faça um programa para ler dois vetores contendo N elementos cada. Em seguida, mostre os elementos de forma intercalada.
+ */
+ 
+using System;
+
+namespace Exercicio5
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Declaração de variáveis
+            int tam; // Tamanho dos vetores a serem criados
+
+            // Recebendo o tamanho dos vetores do usuário
+            Console.Clear();
+            Console.WriteLine();
+            Console.Write(" Entre com o tamanho dos vetores a serem criados: ");
+            tam = int.Parse(Console.ReadLine());
+
+            // Criando os vetores 'vetA' e 'vetB'
+            int[] vetA = new int[tam];
+            int[] vetB = new int[tam];
+
+            // Preenchendo 'vetA'
+            for (int i = 0; i < vetA.Length; i++)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.Write(" Entre com o valor a ser inserido na {0}ª posição do vetor A: ", (i + 1));
+                vetA[i] = int.Parse(Console.ReadLine());
+            }
+            
+            // Preenchendo 'vetB'
+            for (int i = 0; i < vetB.Length; i++)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.Write(" Entre com o valor a ser inserido na {0}ª posição do vetor B: ", (i + 1));
+                vetB[i] = int.Parse(Console.ReadLine());
+            }
+
+            // Imprimindo os valores de 'vetA'
+            Console.Clear();
+            Console.WriteLine("Vetor A:");
+            for (int i = 0; i < vetA.Length; i++)
+            {
+                Console.Write("[{0}] ", vetA[i]);
+            }
+
+            // Imprimindo os valores de 'vetB'
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Vetor B:");
+            for (int i = 0; i < vetB.Length; i++)
+            {
+                Console.Write("[{0}] ", vetB[i]);
+            }
+
+            // Imprimindo os valores de 'vetA' e 'vetB' de forma intercalada
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Vetores A e B intercalados:");
+            for (int i = 0; i < vetA.Length; i++)
+            {
+                Console.Write("[{0}] ", vetA[i]);
+                Console.Write("[{0}] ", vetB[i]);
+            }
+
+            // Finalizando o programa
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("Pressione qualquer tecla para sair...");
+            Console.ReadKey();
+        }
+    }
+}
