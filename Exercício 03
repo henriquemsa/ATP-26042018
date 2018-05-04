@@ -1,0 +1,78 @@
+/*
+ * Faça um método que receba um array e ordene os elementos desse array.
+ */
+
+using System;
+
+namespace Exercicio3
+{
+    class Program
+    {
+        // Método para ordenar arrays do tipo int em ordem crescente
+        static int[] Ordena(int[] vet)
+        {
+            // Declaração de variáveis
+            int aux, trocas; // 'aux' para realizar trocas de posições dos vetores e 'trocas' para guardar o número de trocas efetuadas
+
+            // Laço para realizar 
+            do
+            {
+                // Reinicia o número de trocas antes de entrar no 'for'
+                trocas = 0;
+                // Realiza comparações entre posições do vetor e troca caso a posição seguinte seja menor que a anterior
+                for (int i = 0; i < (vet.Length - 1); i++)
+                {
+                    // Troca as posições do vetor caso a posição seguinte seja menor que a anterior
+                    if (vet[i] > vet[i + 1])
+                    {
+                        aux = vet[i];
+                        vet[i] = vet[i + 1];
+                        vet[i + 1] = aux;
+                        trocas++; // Acrescenta uma comparação
+                    }
+                }
+            } while (trocas != 0); // Termina o laço caso não hajam mais trocas a serem feitas
+
+            return vet; // Retorna o vetor ordenado
+        }
+
+        static void Main(string[] args)
+        {
+            // Declaração de variáveis
+            int p; // Tamanho do vetor
+
+            // Recebendo o tamanho do vetor do usuário
+            Console.Clear();
+            Console.WriteLine();
+            Console.Write(" Entre com o número de posições do vetor: ");
+            p = int.Parse(Console.ReadLine());
+
+            int[] vetA = new int[p];
+
+            // Preenchendo 'vetA'
+            for (int i = 0; i < vetA.Length; i++)
+            {
+                Console.Clear();
+                Console.WriteLine();
+                Console.Write(" Entre com o valor a ser inserido na {0}ª posição do vetor: ", (i + 1));
+                vetA[i] = int.Parse(Console.ReadLine());
+            }
+
+            // Criando vetor de mesmo tamanho que 'vetA'
+            int[] vetResult = vetA;
+
+            // Ordenando
+            vetResult = Ordena(vetA);
+
+            // Imprimindo resultado
+            Console.Clear();
+            Console.WriteLine();
+            Console.WriteLine(" O vetor ordenado é: ");
+            for (int i = 0; i < vetResult.Length; i++)
+            {
+                Console.WriteLine(" [{0}] ", vetResult[i]);
+            }
+            Console.ReadKey();
+        }
+    }
+}
